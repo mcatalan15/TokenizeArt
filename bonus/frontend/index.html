@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TokenizeArt — Mint your 42 NFT</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body class="min-h-screen bg-ink text-white flex items-center justify-center p-6">
+    <main class="w-full max-w-md">
+      <div class="text-center mb-8">
+        <h1 class="text-3xl font-bold tracking-tight">TokenizeArt</h1>
+        <p class="text-accentLight/80 mt-1">Mint a "42" NFT to your Sepolia wallet</p>
+      </div>
+
+      <div class="rounded-2xl border border-accent/40 bg-panel/60 p-6 shadow-xl shadow-accent/10">
+        <label for="address" class="block text-sm mb-1 text-accentLight">Recipient address</label>
+        <div class="flex gap-2 mb-4">
+          <input
+            id="address"
+            type="text"
+            placeholder="0x..."
+            class="flex-1 rounded-lg bg-ink border border-accent/40 px-3 py-2 text-sm focus:outline-none focus:border-accent"
+          />
+          <button
+            id="connect"
+            type="button"
+            class="rounded-lg border border-accent/60 px-3 py-2 text-sm hover:bg-accent/20 whitespace-nowrap"
+          >
+            Connect Wallet
+          </button>
+        </div>
+
+        <label for="title" class="block text-sm mb-1 text-accentLight">Title</label>
+        <input
+          id="title"
+          type="text"
+          maxlength="60"
+          placeholder="my first 42 nft"
+          class="w-full rounded-lg bg-ink border border-accent/40 px-3 py-2 text-sm mb-5 focus:outline-none focus:border-accent"
+        />
+
+        <button
+          id="mint"
+          type="button"
+          class="w-full rounded-lg bg-accent py-2.5 font-semibold hover:bg-accent/80 transition disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          Mint NFT
+        </button>
+
+        <p id="status" class="text-sm text-center mt-4 min-h-[1.25rem] text-accentLight"></p>
+      </div>
+
+      <div id="result" class="hidden mt-6 rounded-2xl border border-accent/40 bg-panel/60 p-6 text-center">
+        <img id="result-image" alt="Minted NFT artwork" class="mx-auto rounded-lg mb-4 w-48 h-48 object-cover" />
+        <p class="text-sm mb-3">Token ID <span id="result-tokenid" class="font-mono text-accentLight"></span></p>
+        <div class="flex flex-col gap-2">
+          <a
+            id="result-tx"
+            href="#"
+            target="_blank"
+            rel="noopener"
+            class="text-sm text-accentLight underline hover:text-white"
+          >
+            View transaction on Etherscan
+          </a>
+          <a
+            id="result-image-link"
+            href="#"
+            target="_blank"
+            rel="noopener"
+            class="text-sm text-accentLight underline hover:text-white"
+          >
+            View image on IPFS
+          </a>
+          <a
+            id="result-metadata-link"
+            href="#"
+            target="_blank"
+            rel="noopener"
+            class="text-sm text-accentLight underline hover:text-white"
+          >
+            View metadata on IPFS
+          </a>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

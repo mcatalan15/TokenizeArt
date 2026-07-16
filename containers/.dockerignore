@@ -1,0 +1,8 @@
+.env
+code/lib/
+code/out/
+code/cache/
+code/broadcast/
+node_modules/
+mint/node_modules/
+.git/

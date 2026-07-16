@@ -1,0 +1,17 @@
+# secrets
+.env
+
+# Foundry
+code/out/
+code/cache/
+code/broadcast/
+
+# Node
+node_modules/
+mint/node_modules/
+bonus/backend/node_modules/
+bonus/frontend/node_modules/
+bonus/frontend/dist/
+
+# OS
+.DS_Store

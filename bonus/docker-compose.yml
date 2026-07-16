@@ -1,0 +1,21 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    env_file:
+      - ../.env
+    environment:
+      PORT: 3000
+    expose:
+      - "3000"
+    restart: unless-stopped
+
+  caddy:
+    build:
+      context: .
+      dockerfile: caddy/Dockerfile
+    ports:
+      - "${BONUS_PORT:-8080}:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
